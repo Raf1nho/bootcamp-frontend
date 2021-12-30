@@ -1,0 +1,10 @@
+.titulo { 
+    background-color: rgb(237, 237, 237);
+    margin-bottom: 8px;
+    padding: 8px 16px;
+}
+
+p {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}

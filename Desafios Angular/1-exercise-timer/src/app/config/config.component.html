@@ -1,0 +1,26 @@
+<form [formGroup]='exerciseForm' (ngSubmit)='add()'>
+    <div>Exercício: <input formControlName='name' type="text"></div>
+    <div>Duração: <input formControlName='duration' type="number"></div>
+    <div>Repetições: <input formControlName='repetitions' type="number"></div>
+    <div>Preparação: <input formControlName='preparation' type="number"></div>
+    <div>Descanso: <input formControlName='rest' type="number"></div>
+    <button type="submit" [disabled]='exerciseForm.invalid'>Adicionar</button>
+</form>
+
+<table>
+    <tr>
+        <th>Exercício</th>
+        <th>Duração</th>
+        <th>Repetições</th>
+        <th>Preparação</th>
+        <th>Descanso</th>
+    </tr>
+    <tr *ngFor='let item of ts.exercisesArray; let i = index'>
+        <td>{{item.name}}</td>
+        <td>{{item.duration}}</td>
+        <td>{{item.repetitions}}</td>
+        <td>{{item.preparation}}</td>
+        <td>{{item.rest}}</td>
+        <td><button (click)='delete(i)'>Excluir</button></td>
+    </tr>
+</table>
